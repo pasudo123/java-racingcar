@@ -1,6 +1,6 @@
 package game.racinggame.console;
 
-import game.racinggame.dto.RacingCreateDto;
+import game.dto.RacingCreateDto;
 
 import java.util.Scanner;
 
