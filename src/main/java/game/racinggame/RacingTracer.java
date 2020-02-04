@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 public class RacingTracer {
-    
+
     private static final String NEW_LINE = "\n";
     private final int tryCount;
     private final List<RacingCar> racingCars;
@@ -34,7 +34,7 @@ public class RacingTracer {
         }
     }
 
-    String getTraces() {
+    public String getTraces() {
 
         final StringBuilder traces = new StringBuilder();
 
@@ -49,7 +49,7 @@ public class RacingTracer {
         return traces.toString();
     }
 
-    List<String> getWinners() {
+    public List<String> getWinners() {
 
         final List<String> winners = new ArrayList<>();
 

@@ -1,19 +1,19 @@
 package game.racinggame;
 
-import game.racinggame.dto.RacingCreateDto;
+import game.dto.RacingCreateDto;
 import game.racinggame.strategy.RandomMovementStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-final class RacingCars {
+public final class RacingCars {
 
     private List<RacingCar> racingCars = new ArrayList<>();
 
-    RacingCars() {}
+    public RacingCars() {}
 
-    void setUpRacing(final RacingCreateDto dto){
+    public void setUpRacing(final RacingCreateDto dto){
 
         this.validateCreateDto(dto);
 
@@ -53,11 +53,11 @@ final class RacingCars {
         return racingCars.size();
     }
 
-    void go(){
+    public void go(){
         racingCars.forEach(RacingCar::move);
     }
 
-    RacingTracer createRacingTracer(){
+    public RacingTracer createRacingTracer(){
         return new RacingTracer(this.racingCars, this.getTryCount());
     }
 }
