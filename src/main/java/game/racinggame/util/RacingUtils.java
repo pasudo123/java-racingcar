@@ -11,6 +11,10 @@ public class RacingUtils {
 
     private RacingUtils(){}
 
+    public static String[] splitLineByWhiteSpace(final String str) {
+        return str.split(WHITE_SPACE);
+    }
+
     public static String[] splitLineByComma(final String str) {
 
         validateString(str);

@@ -16,6 +16,6 @@ public class RacingInputDevice  {
         System.out.println("시도할 횟수는 몇 회 인가요?");
         final int tryCount = Integer.parseInt(scanner.nextLine());
 
-        return new RacingCreateDto(carNames, tryCount);
+        return RacingCreateDto.createByConsole(carNames, tryCount);
     }
 }

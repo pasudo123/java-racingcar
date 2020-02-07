@@ -12,19 +12,17 @@ public class RacingCreateDto {
 
     private RacingCreateDto(){}
 
-    public RacingCreateDto(final String carNames, final int tryCount){
+    private RacingCreateDto(final String[] carNames, final int tryCount){
         this.tryCount = tryCount;
-        this.carNames = Arrays.asList(RacingUtils.splitLineByComma(carNames));
+        this.carNames = Arrays.asList(carNames);
     }
 
-    public static RacingCreateDto create(final RacingWebCreateDto params) {
+    public static RacingCreateDto createByWeb(final String carNames, final int tryCount) {
+        return new RacingCreateDto(RacingUtils.splitLineByWhiteSpace(carNames), tryCount);
+    }
 
-        final RacingCreateDto dto = new RacingCreateDto();
-
-        dto.tryCount = params.getTryCount();
-        dto.carNames = params.getCarNames();
-
-        return dto;
+    public static RacingCreateDto createByConsole(final String carNames, final int tryCount) {
+        return new RacingCreateDto(RacingUtils.splitLineByComma(carNames), tryCount);
     }
 
     public int getTryCount() {
