@@ -1,12 +1,10 @@
 package game.racinggame;
 
-import game.racinggame.dto.RacingCreateDto;
+import game.dto.RacingCreateDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.NullAndEmptySource;
-import org.junit.jupiter.params.provider.NullSource;
 
 import java.util.stream.Stream;
 
@@ -80,15 +78,15 @@ class RacingCarsTest {
     private static Stream<RacingCreateDto> provideRacingCreateDto() {
 
         return Stream.of(
-                new RacingCreateDto("붕붕, 씽씽", 2)
+                RacingCreateDto.createByConsole("붕붕, 씽씽", 2)
         );
     }
 
     private static Stream<Arguments> providePoorRacingCreateDto() {
 
         return Stream.of(
-            Arguments.of(new RacingCreateDto("붕붕, 씽씽", 0), "레이싱 카에게 주어진 시도횟수가 0 입니다."),
-            Arguments.of(new RacingCreateDto(",", 5), "레이싱 카의 이름은 존재하지 않습니다.")
+            Arguments.of(RacingCreateDto.createByConsole("붕붕, 씽씽", 0), "레이싱 카에게 주어진 시도횟수가 0 입니다."),
+            Arguments.of(RacingCreateDto.createByConsole(",", 5), "레이싱 카의 이름은 존재하지 않습니다.")
         );
     }
 

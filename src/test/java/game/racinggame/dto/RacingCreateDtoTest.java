@@ -1,5 +1,6 @@
 package game.racinggame.dto;
 
+import game.dto.RacingCreateDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -20,7 +21,7 @@ class RacingCreateDtoTest {
     void getTryCountTest(final String carNames, final int tryCount, final List<String> expectedCarNames, final int expectTryCount) {
 
         // given & when
-        final RacingCreateDto dto = new RacingCreateDto(carNames, tryCount);
+        final RacingCreateDto dto = RacingCreateDto.createByConsole(carNames, tryCount);
 
         // then
         assertThat(dto.getTryCount()).isEqualTo(expectTryCount);
@@ -32,7 +33,7 @@ class RacingCreateDtoTest {
     void getCarNameByIndexTest(final String carNames, final int tryCount, final List<String> expectedCarNames, final int expectTryCount) {
 
         // given & when
-        final RacingCreateDto dto = new RacingCreateDto(carNames, tryCount);
+        final RacingCreateDto dto = RacingCreateDto.createByConsole(carNames, tryCount);
 
         // then
         for(int i = 0; i < expectedCarNames.size(); i++) {
@@ -46,7 +47,7 @@ class RacingCreateDtoTest {
     void getCarSizeTest(final String carNames, final int tryCount, final List<String> expectedCarNames, final int expectTryCount) {
 
         // given & when
-        final RacingCreateDto dto = new RacingCreateDto(carNames, tryCount);
+        final RacingCreateDto dto = RacingCreateDto.createByConsole(carNames, tryCount);
 
         // then
         assertThat(dto.getCarSize()).isEqualTo(expectedCarNames.size());
